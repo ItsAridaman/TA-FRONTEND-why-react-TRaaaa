@@ -56,45 +56,45 @@
             },
         ];
 
-        let article = (props) => {
-            return 
-            <>
-            <div className="card-main-div">
-                <div className="div-part-1">
-                    <img src={cardInfo.imageURL} alt="myimage" />
-                    <div className="div-1-date">
-                        <span>26 Mar</span>
+        function Article(props) {
+            console.log("here u go")
+            console.log(props)
+
+            return (
+                <div className="card-main-div">
+                    <div className="div-part-1">
+                        <img src={props.articleInfo.imageURL} alt="myimage" />
+                        <div className="div-1-date">
+                            <span>26 Mar</span>
+                        </div>
+                        <div className="div-1-photo">Photos</div>
+
                     </div>
-                    <div className="div-1-photo">Photos</div>
 
-                </div>
+                    <div className="div-part-2">
+                        <h1 className="h1">{props.articleInfo.title}</h1>
+                        <h2 className="h2">{props.articleInfo.subTitle}</h2>
+                        <p className="p">{props.articleInfo.description}</p>
 
-                <div className="div-part-2">
-                    <h1 className="h1">{cardInfo.title}</h1>
-                    <h2 className="h2">{cardInfo.subTitle}</h2>
-                    <p className="p">{cardInfo.description}</p>
+                        <div className="footer">
+                            <span className="footer-1">
+                                <i className='far fa-clock'></i>
+                                6 min ago
+                            </span>
+                            <span className="footer-2">
+                                <i className='far fa-comment'></i>
 
-                    <div className="footer">
-                        <span className="footer-1">
-                            <i className='far fa-clock'></i>
-                            6 min ago
-                        </span>
-                        <span className="footer-2">
-                            <i className='far fa-comment'></i>
-
-                            {cardInfo.comments}Comments
-                        </span>
+                                {props.articleInfo.comments}Comments
+                            </span>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            </>
-        };
-
-
-        ReactDOM.render(article, main);
-
-
+            );
+        }
+        function Articles() {
+            return articles.map((article) => <Article articleInfo={article} />);
+        }
+        ReactDOM.render(<Articles />, main);
     </script>
 
 </body>
