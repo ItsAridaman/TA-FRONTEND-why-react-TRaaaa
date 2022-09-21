@@ -36,7 +36,7 @@
 />
 
 ```
-
+<!-- ... -->
 ### Demo
 
 ![Button Display](https://github.com/nnnkit/react-tasks/raw/master/button-types/buttons.png)
